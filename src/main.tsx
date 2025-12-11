@@ -4,7 +4,7 @@ import { Buffer } from "buffer";
 import "./index.css";
 import App from "./App.tsx";
 
-globalThis.Buffer = Buffer;
+(globalThis as any).Buffer = Buffer;
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
