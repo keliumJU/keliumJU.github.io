@@ -1,8 +1,14 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import BlogList from "./pages/BlogList";
+import BlogPost from "./pages/BlogPost";
 import "./App.css";
 
 function App() {
   return (
-    <>
+    <Router>
+      <nav className="p-4 bg-white shadow mb-4">
+        <Link to="/">Home</Link>
+      </nav>
       <h1 className="text-3xl font-bold underline">
         <span className="bg-blue-500">Kelium J.U</span> Manifesto
       </h1>
@@ -26,7 +32,11 @@ function App() {
           </span>
         </div>
       </div>
-    </>
+      <Routes>
+        <Route path="/" element={<BlogList />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+      </Routes>
+    </Router>
   );
 }
 

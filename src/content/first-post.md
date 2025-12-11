@@ -1,0 +1,38 @@
+---
+slug: first-post
+title: My First Blog Post
+date: 2025-12-10
+author: Kelium J.U
+---
+
+# Dec 10 2025 10:49 PM
+
+Today was a bad day i cannot focus in the CP problems but avanced in the USACO Guide, so my first propblem was this https://open.kattis.com/problems/basketballoneonone the solution with logic is very easy, only i need to check every char in the string and if it's a 'A' or 'B' i need to sum the value of the character aside, i was saving this values in two different accumulators, the answer is 'A' or 'B' in base to more highest value. Follow i share the code
+
+```
+import java.util.Scanner;
+
+public class BasketBallOneOnOne {
+
+    public static void main(String args[]) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            String line = scanner.nextLine();
+            int totalA = 0;
+            int totalB = 0;
+            for (int i = 0; i < line.length(); i++) {
+                if (line.charAt(i) == 'A') {
+                    totalA += (int) line.charAt(i + 1);
+                } else if (line.charAt(i) == 'B') {
+                    totalB += (int) line.charAt(i + 1);
+                }
+            }
+            if (totalA > totalB) {
+                System.out.println("A");
+            } else {
+                System.out.println("B");
+            }
+        }
+    }
+}
+```
+I know that the better approach it's tricky but, this works for me, for know, tomorrow i going to check other problem probably and continue with the USACO guide, bye fish
