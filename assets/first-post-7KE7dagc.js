@@ -9,7 +9,7 @@ author: Kelium J.U
 
 Today was a bad day i cannot focus in the CP problems but avanced in the USACO Guide, so my first propblem was this https://open.kattis.com/problems/basketballoneonone the solution with logic is very easy, only i need to check every char in the string and if it's a 'A' or 'B' i need to sum the value of the character aside, i was saving this values in two different accumulators, the answer is 'A' or 'B' in base to more highest value. Follow i share the code
 
-\`\`\`
+\`\`\` java
 import java.util.Scanner;
 
 public class BasketBallOneOnOne {
