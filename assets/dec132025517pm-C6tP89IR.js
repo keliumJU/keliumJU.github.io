@@ -1,0 +1,72 @@
+const n=`---
+slug: key-races
+title: Key Races
+date: 2025-12-13
+author: Kelium J.U
+---
+
+# Dec 13 2025 5:17 PM
+
+Today was easy becuase i don't need to do cheat :() only i get the solution using the example test cases, the approach was simple for this problem with math as topic, for this case the equation is very simple: \`s*v1+t1*2\` and \`s*v2+t1*2\` to calculate the total of the time in ms for every player, in base to conditions it's necessary multiply by 2 the total ping because this happend when the user send a receive the string to typing.
+
+
+> problem: <https://codeforces.com/problemset/problem/835/A>
+
+\`\`\` java
+import java.io.*;
+import java.util.*;
+
+public class KeyRaces {
+    public static void main(String[] args) {
+        Kattio io = new Kattio();
+        int[] nums = new int[5];
+        for(int i=0; i<5; i++){
+            nums[i] = io.nextInt();
+        }
+
+        int a = nums[0] * nums[1] + nums[3] * 2;
+        int b = nums[0] * nums[2] + nums[4] * 2;
+
+        if (a < b) {
+            io.println("First");
+        }else if(b < a) {
+            io.println("Second");
+        }else {
+            io.println("Friendship");
+        }
+
+        io.close();
+    }
+
+    static class Kattio extends PrintWriter {
+        private BufferedReader r;
+        private StringTokenizer st;
+        // standard input
+        public Kattio() { this(System.in, System.out); }
+        public Kattio(InputStream i, OutputStream o) {
+            super(o);
+            r = new BufferedReader(new InputStreamReader(i));
+        }
+        // USACO-style file input
+        public Kattio(String problemName) throws IOException {
+            super(problemName + ".out");
+            r = new BufferedReader(new FileReader(problemName + ".in"));
+        }
+        // returns null if no more input
+        public String next() {
+            try {
+                while (st == null || !st.hasMoreTokens())
+                    st = new StringTokenizer(r.readLine());
+                return st.nextToken();
+            } catch (Exception e) {}
+            return null;
+        }
+        public int nextInt() { return Integer.parseInt(next()); }
+        public double nextDouble() { return Double.parseDouble(next()); }
+        public long nextLong() { return Long.parseLong(next()); }
+    }
+
+}
+\`\`\`
+Related to the bash script i upload a repo with this problems, that are part of the usaco-guide, look my repor for more info: <https://github.com/keliumJU/usaco-guide> , i think that is all, Bye Fishy!
+`;export{n as default};
