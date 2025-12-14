@@ -1,0 +1,72 @@
+const n=`---
+slug: fafa-and-the-gates
+title: Fafa and the Gates
+date: 2025-12-14
+author: Kelium J.U
+---
+
+# Dec 14 2025 3:19 PM
+
+Today was the day, i apply every advice of [Colin Galen](https://www.youtube.com/watch?v=bSdp2WeyuJY) to read good the problem and take the necessary time to fail, i mean not got with the first idea, instead try to find edge cases to find a better solution, for that right now i don't debug a lot(only the necessary), the problem based in the \`x = y\` equation to identlfy the different kingdoms, we can suppose that the kingdom A is up to the line(\`x=y\`) and the kingdom B is down, the trick is that exist a gate in every point of the rect, you only pay when you pass, not in the gate only when you are in the gate and the next move is the same of the previous in that moment you go into the kingdom. 
+
+
+> problem: <https://codeforces.com/problemset/problem/935/B>
+
+\`\`\` java
+import java.io.*;
+import java.util.*;
+
+public class KeyRaces {
+    public static void main(String[] args) {
+        Kattio io = new Kattio();
+        int n = io.nextInt();
+        String s = io.next();
+        int x=0, y=0;
+        int ans=0;
+        
+        for(int i=0; i<n; i++){
+            char move = s.charAt(i);
+            if(move == 'U') {
+                y++;
+            }else if(move == 'R') {
+                x++;
+            }
+            if(x == y && i+1 < n && s.charAt(i+1) == move) ans++;
+        }
+        
+        io.println(ans);
+        
+        io.close();
+    }
+
+    static class Kattio extends PrintWriter {
+        private BufferedReader r;
+        private StringTokenizer st;
+        // standard input
+        public Kattio() { this(System.in, System.out); }
+        public Kattio(InputStream i, OutputStream o) {
+            super(o);
+            r = new BufferedReader(new InputStreamReader(i));
+        }
+        // USACO-style file input
+        public Kattio(String problemName) throws IOException {
+            super(problemName + ".out");
+            r = new BufferedReader(new FileReader(problemName + ".in"));
+        }
+        // returns null if no more input
+        public String next() {
+            try {
+                while (st == null || !st.hasMoreTokens())
+                    st = new StringTokenizer(r.readLine());
+                return st.nextToken();
+            } catch (Exception e) {}
+            return null;
+        }
+        public int nextInt() { return Integer.parseInt(next()); }
+        public double nextDouble() { return Double.parseDouble(next()); }
+        public long nextLong() { return Long.parseLong(next()); }
+    }
+
+}
+\`\`\`
+> **Note** i was thinking in improving this interface because right now sucks, so maybe tomorrow we have something better :) i think that is all, **Bye Fishy**!`;export{n as default};
