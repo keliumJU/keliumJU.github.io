@@ -1,45 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&display=swap");
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
+@theme {
+    /* --- Brand Colors from Image --- */
+    --color-brand-cyan: #7df9ff;
+    --color-brand-pink: #ffc8dd;
+    --color-brand-yellow: #fff6a5;
+    --color-brand-purple: #cdb4db;
+    --color-brand-blue: #a2d2ff;
+    --color-ink: #121212; /* Nearly black */
+    --color-paper: #ffffff;
 
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
+    /* --- Fonts --- */
+    --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
 
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
+    /* --- Radii --- */
+    --radius-bento: 1.5rem; /* 24px */
+    --radius-pill: 9999px;
 
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
+    /* --- Animations --- */
+    --animate-float: float 6s ease-in-out infinite;
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
     }
 }
 
-.card {
-    padding: 2em;
+/* --- Custom Utility Classes --- */
+
+/* The "Sticker" Look: Black border + Hard Shadow */
+@utility sticker-shadow {
+    box-shadow: 4px 4px 0px 0px var(--color-ink);
 }
 
-.read-the-docs {
-    color: #888;
+@utility sticker-shadow-hover {
+    box-shadow: 2px 2px 0px 0px var(--color-ink);
+    transform: translate(2px, 2px);
+}
+
+/* The Halftone Background Pattern */
+@utility bg-halftone {
+    background-image: radial-gradient(
+        var(--color-brand-pink) 2px,
+        transparent 2px
+    );
+    background-size: 24px 24px;
+    opacity: 0.2;
+}
+
+/* Background Mesh */
+@utility bg-mesh {
+    background-color: #fafafa;
+    background-image:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(125, 249, 255, 0.2) 0%,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 200, 221, 0.2) 0%,
+            transparent 40%
+        );
+}
+
+/* Base Reset */
+body {
+    color: var(--color-ink);
+    background-color: #fafafa;
 }
