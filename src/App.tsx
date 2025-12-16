@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import BlogList from "./pages/BlogList";
-import BlogPost from "./pages/BlogPost";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+//import BlogList from "./pages/BlogList";
+//import BlogPost from "./pages/BlogPost";
 import {
-  Briefcase,
+  //Briefcase,
   Gamepad2,
   PenTool,
   Star,
